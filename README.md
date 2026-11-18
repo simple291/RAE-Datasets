@@ -4,7 +4,7 @@
 
 ## 下载数据
 
-完整数据以分卷 TAR 文件存放在 [Datasets 2026-11-18 Release](https://github.com/simple291/RAE-Datasets/releases/tag/datasets-2026-11-18)。首次上传完成并通过校验后，该 Release 会公开显示。
+完整数据以分卷 TAR 文件存放在 [Datasets 2026-11-18 Release](https://github.com/simple291/RAE-Datasets/releases/tag/datasets-2026-11-18)。全部数据分卷已上传，并通过 SHA-256 校验。
 
 每个数据集单独打包，每个分卷不超过 1 GiB。分卷保留原始文件内容、中文名称、目录结构和空目录；LF 下已有的 ZIP 原始包也完整包含。
 
@@ -31,9 +31,11 @@ Release 中的 `packages.json` 列出全部分卷、字节数和 SHA-256。每�
 
 ## 自动下载与解包
 
-使用 Python 3.9 或以上版本：
+使用 Python 3.9 或以上版本。先获取说明和下载脚本，再运行下载：
 
 ```bash
+git clone https://github.com/simple291/RAE-Datasets.git
+cd RAE-Datasets
 pip install requests
 python download_datasets.py --output Datasets
 ```
@@ -53,4 +55,6 @@ python download_datasets.py --list
 脚本支持断点下载，自动检查分卷 SHA-256，解包后再次核对原始文件 SHA-256。下载缓存默认保留在 `.rae-datasets-cache`，可通过 `--cache` 指定位置；`--download-only` 只下载，不解包。
 
 下载全部数据并解包需要同时容纳分卷缓存和还原后的文件，请预留约 110 GiB 空间。
+
+
 
