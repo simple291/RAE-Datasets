@@ -27,4 +27,30 @@
 
 Release 中的 `packages.json` 列出全部分卷、字节数和 SHA-256。每组数据还提供 `.files.json` 原始文件校验清单，以及 `.package.json` 包元数据。
 
-请下载同一数据集的所有 `.tar.partNNN` 分卷，按编号顺序连接为一个 TAR 文件，再解包。不要把单个分卷当成独立压缩包。自动下载、校验和解包工具将在首次上传时一起提供。
+请下载同一数据集的所有 `.tar.partNNN` 分卷，按编号顺序连接为一个 TAR 文件，再解包。不要把单个分卷当成独立压缩包。也可以使用下面的自动下载、校验和解包工具。
+
+## 自动下载与解包
+
+使用 Python 3.9 或以上版本：
+
+```bash
+pip install requests
+python download_datasets.py --output Datasets
+```
+
+只下载指定目录，例如：
+
+```bash
+python download_datasets.py --output Datasets --dataset CO3D --dataset 蜂蜜
+```
+
+查看目录列表：
+
+```bash
+python download_datasets.py --list
+```
+
+脚本支持断点下载，自动检查分卷 SHA-256，解包后再次核对原始文件 SHA-256。下载缓存默认保留在 `.rae-datasets-cache`，可通过 `--cache` 指定位置；`--download-only` 只下载，不解包。
+
+下载全部数据并解包需要同时容纳分卷缓存和还原后的文件，请预留约 110 GiB 空间。
+
