@@ -1,60 +1,54 @@
-# RAE-Datasets
+# RAE-Datasets · 论文测试批次
 
-用于共享 10 组研究数据，共 **33,495 个文件，54,282,093,354 字节（约 50.55 GiB）**。
+本仓库发布用于 RAE-Fable 与 ObjectGS 对比的 **21 个固定场景**。共 2,341 个训练视角、205 个验证视角、286 个测试视角。每个场景可以单独下载。后续模型微调沿用本版本的测试相机、图像尺寸和视角 ID，便于逐视角比较。[下载论文数据集](https://github.com/simple291/RAE-Datasets/releases/tag/paper-test21-v1) · [固定测试视角](test_views.json) · [数据来源与许可](SOURCES.md)
 
-## 下载数据
+## 场景
 
-完整数据以分卷 TAR 文件存放在 [Datasets 2026-11-18 Release](https://github.com/simple291/RAE-Datasets/releases/tag/datasets-2026-11-18)。全部数据分卷已上传，并通过 SHA-256 校验。
+点击名称下载对应场景的 ZIP。完整下载量约 2.66 GiB。
 
-每个数据集单独打包，每个分卷不超过 1 GiB。分卷保留原始文件内容、中文名称、目录结构和空目录；LF 下已有的 ZIP 原始包也完整包含。
+| 数据集 | 场景 ID | 训练 | 验证 | 测试 |
+|---|---|---:|---:|---:|
+| [百岁山](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/baisuishan.zip) | `baisuishan` | 81 | 9 | 6 |
+| [NERFBK 杯子](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/nerfbk-cup.zip) | `nerfbk-cup` | 233 | 26 | 28 |
+| [CO3D 水瓶 38_1742_5308](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/co3d-38-1742-5308.zip) | `co3d-38-1742-5308` | 177 | 0 | 25 |
+| [蜂蜜 honey_video](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/honey.zip) | `honey` | 50 | 0 | 6 |
+| [H03 金属鸟笼 23-19819-29334](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/uco3d-h03-birdcage.zip) | `uco3d-h03-birdcage` | 158 | 21 | 21 |
+| [粉色白边镂空篮 9-9955-3006](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/uco3d-pink-basket.zip) | `uco3d-pink-basket` | 152 | 19 | 20 |
+| [黄色长槽沥水篮 116-50670-77607](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/uco3d-yellow-basket.zip) | `uco3d-yellow-basket` | 144 | 18 | 19 |
+| [H01 白色购物篮 12-10308-28681](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/uco3d-h01-shopping-basket.zip) | `uco3d-h01-shopping-basket` | 158 | 21 | 21 |
+| [葡萄果篮 Basket](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-basket.zip) | `lf-basket` | 120 | 15 | 15 |
+| [Africa](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-africa.zip) | `lf-africa` | 120 | 15 | 15 |
+| [Ship](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-ship.zip) | `lf-ship` | 124 | 16 | 16 |
+| [Plant](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-plant.zip) | `lf-plant` | 120 | 15 | 15 |
+| [Thinplant](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-thinplant.zip) | `lf-thinplant` | 114 | 14 | 15 |
+| [Torch](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lf-torch.zip) | `lf-torch` | 106 | 13 | 14 |
+| [figurines 红色玩具椅](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/objectgs-figurines-chair.zip) | `objectgs-figurines-chair` | 123 | 0 | 4 |
+| [耳机 Headphones](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/objectgs-headphones.zip) | `objectgs-headphones` | 31 | 0 | 5 |
+| [teatime 茶杯与咖啡杯](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/objectgs-teatime.zip) | `objectgs-teatime` | 59 | 0 | 3 |
+| [bouquet 花束](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/lerf-bouquet.zip) | `lerf-bouquet` | 102 | 0 | 15 |
+| [v_004 三瓶](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/trade-v004.zip) | `trade-v004` | 56 | 0 | 8 |
+| [flower 曝光组 2](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/hdrnerf-flower.zip) | `hdrnerf-flower` | 29 | 3 | 3 |
+| [合成玻璃杯](https://github.com/simple291/RAE-Datasets/releases/download/paper-test21-v1/synthetic-glass.zip) | `synthetic-glass` | 84 | 0 | 12 |
+| **合计** | **21 个场景** | **2341** | **205** | **286** |
 
-> GitHub 的 **Code → Download ZIP** 只下载本仓库中的说明和工具，不包含 Release 中的数据文件。
+## 下载与校验
 
-| 原始目录 | 文件数 | 大小 (GiB) | 下载文件前缀 |
-|---|---:|---:|---|
-| CO3D | 2,465 | 0.549 | CO3D |
-| LF | 19,896 | 43.870 | LF |
-| HDR-NeRF | 177 | 0.060 | HDR-NeRF |
-| LERF | 1,256 | 0.279 | LERF |
-| NERFBK | 587 | 0.315 | NERFBK |
-| ObjectGS | 7,390 | 3.290 | ObjectGS |
-| Real_hollow_search_20261027 | 971 | 1.698 | Real_hollow_search_20261027 |
-| TRADE | 751 | 0.432 | TRADE |
-| 百岁山 | 1 | 0.019 | baisuishan |
-| 蜂蜜 | 1 | 0.042 | fengmi |
+使用 Python 3.9 或以上版本。场景和文件大小可离线查询。
 
-## 校验和还原
-
-Release 中的 `packages.json` 列出全部分卷、字节数和 SHA-256。每组数据还提供 `.files.json` 原始文件校验清单，以及 `.package.json` 包元数据。
-
-请下载同一数据集的所有 `.tar.partNNN` 分卷，按编号顺序连接为一个 TAR 文件，再解包。不要把单个分卷当成独立压缩包。也可以使用下面的自动下载、校验和解包工具。
-
-## 自动下载与解包
-
-使用 Python 3.9 或以上版本。先获取说明和下载脚本，再运行下载：
-
-```bash
+```shell
 git clone https://github.com/simple291/RAE-Datasets.git
 cd RAE-Datasets
-pip install requests
-python download_datasets.py --output Datasets
-```
-
-只下载指定目录，例如：
-
-```bash
-python download_datasets.py --output Datasets --dataset CO3D --dataset 蜂蜜
-```
-
-查看目录列表：
-
-```bash
+python -m pip install requests
 python download_datasets.py --list
+python download_datasets.py --dataset synthetic-glass --dataset nerfbk-cup --output Datasets
 ```
 
-脚本支持断点下载，自动检查分卷 SHA-256，解包后再次核对原始文件 SHA-256。下载缓存默认保留在 `.rae-datasets-cache`，可通过 `--cache` 指定位置；`--download-only` 只下载，不解包。
+省略 `--dataset` 会下载全部 21 个场景。`--download-only` 仅缓存 ZIP，`--cache` 可指定缓存目录。下载脚本支持断点续传，对照固定清单校验每包的字节数和 SHA-256，再还原到 `Datasets/<场景 ID>/`。也可以从上表直接下载 ZIP，用仓库根目录的校验表手动核对。[包清单](datasets.json) · [SHA-256](SHA256SUMS)
 
-下载全部数据并解包需要同时容纳分卷缓存和还原后的文件，请预留约 110 GiB 空间。
+## 文件与评测
 
+每个场景包含原尺寸 RGB、逐帧相机内外参、可用掩码，以及训练时的前景与背景初始点云。`adaptation_manifest.json` 中的相对路径定位各类输入，`split.json` 记录固定划分。数据包还包含逐文件 SHA-256。合成玻璃杯的折射材质、背景与换背景真值单列在 `evaluation_only/`，仅用于评估。
 
+微调实验使用训练视角更新参数，验证视角用于选择配置。报告结果时按 `test_views.json` 使用相同的相机和原图尺寸，先在场景内对逐视角指标等权平均，再对 21 个场景等权汇总。实际调整应记录模型版本、配置及所用验证视角。验证集为 0 的场景可从训练集另留验证帧，并记录帧 ID。
 
+LF Ship 的 156 张轮廓中，9 张来自历史掩码，147 张通过原始网格提示与 SAM2 补齐，细索边缘可能有误分。teatime 以玻璃茶杯和咖啡杯的并集作为前景，3 个测试视角都有 RGB，完整并集参考掩码仅 `test_0` 有效。各来源的署名、引用、适配和使用条件见[来源说明](SOURCES.md)。
